@@ -17,7 +17,7 @@ const rrfProps = {
     userProfile: 'users'
   },
   dispatch: store.dispatch,
-  createFireInstance
+  createFirestoreInstance
 }
 
 ReactDOM.render(

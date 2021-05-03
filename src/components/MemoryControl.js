@@ -1,5 +1,5 @@
 import React from 'react';
-// import NewMemoryForm from './NewMemoryForm';
+import NewMemoryForm from './NewMemoryForm';
 // import MemoryList from './MemoryList';
 // import MemoryDetail from './MemoryDetail';
 // import EditMemoryForm from './EditMemoryForm';
@@ -23,7 +23,8 @@ class MemoryControl extends React.Component {
   render() {
     let currentlyVisible = null;
     let buttonText = null;
-
+    
+    currentlyVisible = <NewMemoryForm />
     return(
       <React.Fragment>
         {currentlyVisible}
@@ -38,10 +39,10 @@ class MemoryControl extends React.Component {
 // MemoryControl.propTypes = {
 // }
 
-// const mapStateToProps = state => {
-//   return {
-//   }
-// }
+const mapStateToProps = state => {
+  return {
+  }
+}
 
 MemoryControl = connect(mapStateToProps)(MemoryControl);
 
