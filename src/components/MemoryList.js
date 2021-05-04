@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Memory from "./Memory";
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
-
+import FadeIn from 'react-fade-in';
 
 function MemoryList(props){
   useFirestoreConnect([
@@ -13,21 +13,21 @@ function MemoryList(props){
   if (isLoaded(memories)){
     return (
       <>
-      <FadeIn>
-      <div class="memory-list">
-      <div class="center">
-        {memories.map((memory)=>{
-          return <Memory
-          whenMemoryClicked = {props.onMemorySelection}
-          name = {memory.name}
-          description = {memory.description}
-          date = {memory.date}
-          memory = {memory}
-          id = {memory.id}
-          key={memory.id} />
-        })}
-      </div>
-      </div>
+      <FadeIn transitionDuration="1000">
+        <div class="memory-list">
+          <div class="center">
+            {memories.map((memory)=>{
+              return <Memory
+              whenMemoryClicked = {props.onMemorySelection}
+              name = {memory.name}
+              description = {memory.description}
+              date = {memory.date}
+              memory = {memory}
+              id = {memory.id}
+              key={memory.id} />
+            })}
+          </div>
+        </div>
       </FadeIn>
       </>
     );
