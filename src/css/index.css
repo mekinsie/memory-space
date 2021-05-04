@@ -89,6 +89,12 @@ code {
   margin: 30px;
 }
 
+.form {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
 p {
   margin: 4px;
 }
