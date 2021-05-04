@@ -23,7 +23,7 @@ function NewMemoryForm(props){
     <>
       <ReusableForm
       formSubmissionHandler={addMemoryToFireStore}
-      buttonText="Save Memory/Dream" />
+      buttonText="Save Memory" />
     </>
   );
 }

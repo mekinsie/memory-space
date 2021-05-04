@@ -13,7 +13,7 @@ function MemoryList(props){
   if (isLoaded(memories)){
     return (
       <>
-        {/* <hr/> */}
+      <div class="center">
         {memories.map((memory)=>{
           return <Memory
           whenMemoryClicked = {props.onMemorySelection}
@@ -24,6 +24,7 @@ function MemoryList(props){
           id = {memory.id}
           key={memory.id} />
         })}
+      </div>
       </>
     );
   } else {

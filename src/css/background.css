@@ -26,7 +26,8 @@
     width: 100%;
     height: 100vh;
     position: absolute;
-
+    filter: blur(15px);
+    opacity: 1.0;
 }
 
 .circles{
@@ -46,10 +47,18 @@
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(0, 0, 0, 0.2);
+    /* background: rgba(0, 0, 0, 0.2); */
+    background: rgb(223, 195, 187);
     /* block color */
     animation: animate 25s linear infinite;
     bottom: -150px;
+}
+
+/* .purple li{
+  background: rgb(171, 148, 197);
+} */
+.orange li{
+  background: rgb(223, 174, 159);
 }
 
 .circles li:nth-child(1){
