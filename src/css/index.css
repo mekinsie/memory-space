@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
 html {
   height: 100%;
@@ -38,7 +38,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to bottom right, rgb(99, 70, 179), rgb(92, 173, 211));
+  /* background: linear-gradient(to bottom right, rgb(99, 70, 179), rgb(92, 173, 211)); */
   /* background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8); */
   background: rgb(236, 229, 248);  
   height: 100%;
@@ -60,6 +60,21 @@ h1 {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.fadeOut{
+  opacity:0;
+  width:0;
+  height:0;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+
+}
+
+.fadeIn{
+  opacity:1;
+  width:100px;
+  height:100px;
+  transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
 }
 
 .center {
@@ -87,10 +102,15 @@ code {
 
 .memory {
   margin: 30px;
+  padding-top: 40px;
 }
 
 .memory-list {
   margin-bottom:30px;
+  /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 220px);
+    grid-gap: 30px; */
 }
 
 #form {
@@ -111,30 +131,36 @@ h3{
 /* dfgjhdf */
 
 .moving_shape {
-  width: 100%;
-  height: 100%;
-  background: #FF0099;
-  background: linear-gradient(270deg,#845ec2,#d65db1,#ff6f91,#ff9671, #ffc75f, #f9f871);
-  background-color: rgba(0, 0, 0, 0);
-  background-repeat: repeat;
-  background-size: auto auto;
-  background-color: #ffd800;
-  background-size: 1000%;
-  background-repeat: repeat;
+  height: auto;
+  width: auto;
+  left: 25%;
+  right: 25%;
+  top: 5%;
+  bottom: 25%;
+  /* left:35%; */
+  background-color: rgb(166, 147, 185);
+  /* background-size: 1000%; */
+  /* padding-top: 75px; */
   color: #fff;
   animation: bg-move 30s linear infinite forwards, 
   border-move 15s linear infinite forwards;
-}
+  filter: blur(5px);
+  opacity: 0.5;
+  z-index: -1;
+  position: fixed;
 
-.container {
-z-index: -1;
-height: 200px;
-width: 200px;
-/* position:absolute; */
-left:50%;
-top: 50%;
-transform: translate(-50%,-50%);
 }
+/* .moving_shape h2, .moving_shape h3{
+  /* margin-top: 40px; */
+/* } */
+
+/* .container {
+z-index: -1;
+/* height: 300px;
+width: 300px; */
+
+/* transform: translate(-50%,-50%); }*/
+
 
 @keyframes bg-move{0%{background-position:0 50%}50%{background-position:100% 50%}to{background-position:0 50%}}
 

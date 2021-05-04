@@ -13,6 +13,7 @@ function MemoryList(props){
   if (isLoaded(memories)){
     return (
       <>
+      <FadeIn>
       <div class="memory-list">
       <div class="center">
         {memories.map((memory)=>{
@@ -27,6 +28,7 @@ function MemoryList(props){
         })}
       </div>
       </div>
+      </FadeIn>
       </>
     );
   } else {
