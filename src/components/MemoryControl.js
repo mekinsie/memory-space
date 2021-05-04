@@ -2,7 +2,7 @@ import React from 'react';
 import NewMemoryForm from './NewMemoryForm';
 import MemoryList from './MemoryList';
 import MemoryDetail from './MemoryDetail';
-// import EditMemoryForm from './EditMemoryForm';
+import EditMemoryForm from './EditMemoryForm';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import * as a from './../actions';
@@ -32,11 +32,31 @@ class MemoryControl extends React.Component {
     console.log(this.props.selectedMemory)
   }
 
+  handleDeletingMemory = (id) => {
+    this.props.firestore.delete(a.targetMemory(id));
+    const {dispatch} = this.props;
+    const action = a.selectMemory(null);
+    dispatch(action);
+  }
+
+  handleEditingMemory = () => {
+    this.setState({
+      editing: false
+    })
+    const {dispatch} = this.props;
+    const action = a.selectMemory(null);
+    dispatch(action);
+  }
+
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
   handleClick = () => {
     if (this.props.selectedMemory != null){
       const {dispatch} = this.props;
-      const action = a.selectMemory(null)
-      dispatch(action)
+      const action = a.selectMemory(null);
+      dispatch(action);
       this.setState({
         editing: false
       });
@@ -50,12 +70,14 @@ class MemoryControl extends React.Component {
   render() {
     let currentlyVisible = null;
     let buttonText = null;
-    if (this.props.selectedMemory != null){
-      // memory = {this.props.selectedMemory}
-      currentlyVisible = <MemoryDetail />
+    if (this.state.editing){
+      currentlyVisible= <EditMemoryForm memory = {this.props.selectedMemory} onEditMemory = {this.handleEditingMemory} />
+      buttonText= "Return to Memories/Dreams"
+    } else if (this.props.selectedMemory != null){
+      currentlyVisible = <MemoryDetail onClickingDelete = {this.handleDeletingMemory} onClickingEdit = {this.handleEditClick} />
       buttonText = "Return to Memories/Dreams"
-    }else if (this.state.formVisible){
-      currentlyVisible = <NewMemoryForm onNewMemoryCreation={this.handleAddingMemory}/> // Need to update for the visibility function
+    } else if (this.state.formVisible){
+      currentlyVisible = <NewMemoryForm onNewMemoryCreation={this.handleAddingMemory}/>
       buttonText = "Return to Memories/Dreams"
     } else {
       buttonText = "Create New Memory or Dream"
@@ -82,4 +104,4 @@ const mapStateToProps = state => {
 
 MemoryControl = connect(mapStateToProps)(MemoryControl);
 
-export default MemoryControl;
+export default withFirestore(MemoryControl);

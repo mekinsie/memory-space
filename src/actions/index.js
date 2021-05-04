@@ -6,3 +6,10 @@ export const selectMemory = (memory) => {
     memory: memory
   }
 }
+
+export const targetMemory = (id) => {
+  return {
+    collection: 'memories',
+    doc: id
+  }
+}

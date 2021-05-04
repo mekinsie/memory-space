@@ -10,6 +10,8 @@ function MemoryDetail(props){
       <h3>Name: {memory.name}</h3>
       <h3>Date: {memory.date}</h3>
       <h3>Description: {memory.description}</h3>
+      <button onClick={() => props.onClickingDelete(memory.id)}>Delete Memory</button>
+      <button onClick={props.onClickingEdit}>Edit Memory</button>
     </>
   )
 }
