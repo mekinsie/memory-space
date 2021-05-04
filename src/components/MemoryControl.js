@@ -18,6 +18,12 @@ class MemoryControl extends React.Component {
     }
   }
 
+  handleAddingMemory = () => {
+      this.setState(prevState => ({
+        formVisible: !prevState.formVisible
+      }));
+  }
+
   handleSelectMemory = (memory) => {
     console.log(memory);
     const { dispatch } = this.props;
@@ -49,7 +55,7 @@ class MemoryControl extends React.Component {
       currentlyVisible = <MemoryDetail />
       buttonText = "Return to Memories/Dreams"
     }else if (this.state.formVisible){
-      currentlyVisible = <NewMemoryForm /> // Need to update for the visibility function
+      currentlyVisible = <NewMemoryForm onNewMemoryCreation={this.handleAddingMemory}/> // Need to update for the visibility function
       buttonText = "Return to Memories/Dreams"
     } else {
       buttonText = "Create New Memory or Dream"
@@ -57,8 +63,8 @@ class MemoryControl extends React.Component {
     }
     return(
       <React.Fragment>
-        {currentlyVisible}
         <button onClick={this.handleClick}>{buttonText}</button>
+        {currentlyVisible}
       </React.Fragment>
     )
   }
