@@ -14,7 +14,8 @@ class MemoryControl extends React.Component {
     this.state = {
       // selectedMemory: null,
       editing: false,
-      formVisible: false
+      formVisible: false,
+      visible: true
     }
   }
 
@@ -85,8 +86,10 @@ class MemoryControl extends React.Component {
     }
     return(
       <React.Fragment>
-        <button id="button-center" onClick={this.handleClick}>{buttonText}</button>
-        {currentlyVisible}
+        <div >
+          <button id="button-center" onClick={this.handleClick}>{buttonText}</button>
+          {currentlyVisible}
+        </div>
       </React.Fragment>
     )
   }

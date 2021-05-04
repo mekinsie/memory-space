@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
 html {
   height: 100%;
@@ -38,7 +38,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to bottom right, rgb(99, 70, 179), rgb(92, 173, 211));
+  /* background: linear-gradient(to bottom right, rgb(99, 70, 179), rgb(92, 173, 211)); */
   /* background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8); */
   background: rgb(236, 229, 248);  
   height: 100%;
@@ -86,10 +86,23 @@ code {
 }
 
 .memory {
-  margin: 30px;
+  margin: auto;
+  margin-bottom: 40px;
+  background-color: rgb(219, 212, 231);
+  border-radius: 40px;
+  padding: 30px;
+  width: 400px;
 }
 
-.form {
+.memory-list {
+  padding-bottom:50px;
+  /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 220px);
+    grid-gap: 30px; */
+}
+
+#form {
   margin: auto;
   width: 50%;
   text-align: center;
@@ -102,3 +115,40 @@ p {
 h3{
   margin: 5px;
 }
+
+
+/*Blob Below*/
+
+/* .moving_shape {
+  height: auto;
+  width: auto;
+  left: 25%;
+  right: 25%;
+  top: 5%;
+  bottom: 25%;
+  background-color: rgb(166, 147, 185);
+  color: #fff;
+  animation: bg-move 30s linear infinite forwards, 
+  border-move 15s linear infinite forwards;
+  filter: blur(5px);
+  opacity: 0.5;
+  z-index: -1;
+  position: fixed;
+
+}
+
+@keyframes bg-move{0%{background-position:0 50%}50%{background-position:100% 50%}to{background-position:0 50%}}
+
+@keyframes border-move{
+0%{ border-radius:51% 49% 34% 66% / 39% 66% 34% 61%; }
+10%{ border-radius:39% 61% 38% 62% / 53% 54% 46% 47%; }
+20%{ border-radius:56% 44% 52% 48% / 57% 35% 65% 43%; }
+30%{ border-radius:41% 59% 45% 55% / 33% 56% 44% 67%; }
+40%{ border-radius:46% 54% 60% 40% / 55% 74% 26% 45%; }
+50%{ border-radius:44% 56% 22% 78% / 31% 74% 26% 69%; }
+60%{ border-radius:31% 69% 32% 68% / 31% 71% 29% 69%; }
+70%{ border-radius:44% 56% 60% 40% / 63% 36% 64% 37%; }
+80%{ border-radius:46% 54% 38% 62% / 44% 48% 52% 56%; }
+90%{ border-radius:66% 34% 57% 43% / 49% 51% 49% 51%; }
+100%{ border-radius:51% 49% 34% 66% / 39% 66% 34% 61%; }
+} */

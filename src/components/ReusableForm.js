@@ -6,14 +6,14 @@ function ReusableForm(props) {
     <React.Fragment>
       <form id="form" onSubmit={props.formSubmissionHandler}>
         <input
-          type='text'
-          name='name'
-          placeholder='Memory Name'
-          required />
-        <input
           type='date'
           name='date'
           placeholder='Date'
+          required />
+        <input
+          type='text'
+          name='name'
+          placeholder='Memory Name'
           required />
         <textarea
           name='description'

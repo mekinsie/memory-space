@@ -5,8 +5,8 @@ function Memory(props){
   return(
     <>
       <div class="memory" >
-      <h3 id="link" onClick = {()=> props.whenMemoryClicked(props.memory)}>{props.date}</h3>
-      <h3>{props.name}</h3>
+        <h3 id="link" onClick = {()=> props.whenMemoryClicked(props.memory)}>{props.date}</h3>
+        <h3>{props.name}</h3>
         <p><em>{props.description}</em></p>
       </div>
     </>

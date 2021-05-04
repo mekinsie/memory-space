@@ -3,6 +3,8 @@ import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
 import { useFirestore } from 'react-redux-firebase';
 import * as a from './../actions';
+import FadeIn from 'react-fade-in';
+
 
 function EditMemoryForm (props){
   const firestore = useFirestore();
@@ -21,9 +23,11 @@ function EditMemoryForm (props){
 
   return (
     <>
-      <ReusableForm
-      formSubmissionHandler={handleEditMemorySubmit}
-      buttonText="Update Memory" />
+      <FadeIn transitionDuration="1000">
+        <ReusableForm
+        formSubmissionHandler={handleEditMemorySubmit}
+        buttonText="Update Memory" />
+      </FadeIn>
     </>
   );
 }
