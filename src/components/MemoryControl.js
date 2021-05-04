@@ -72,20 +72,20 @@ class MemoryControl extends React.Component {
     let buttonText = null;
     if (this.state.editing){
       currentlyVisible= <EditMemoryForm memory = {this.props.selectedMemory} onEditMemory = {this.handleEditingMemory} />
-      buttonText= "Return to Memories/Dreams"
+      buttonText= "Return to Memories"
     } else if (this.props.selectedMemory != null){
       currentlyVisible = <MemoryDetail onClickingDelete = {this.handleDeletingMemory} onClickingEdit = {this.handleEditClick} />
-      buttonText = "Return to Memories/Dreams"
+      buttonText = "Return to Memories"
     } else if (this.state.formVisible){
       currentlyVisible = <NewMemoryForm onNewMemoryCreation={this.handleAddingMemory}/>
-      buttonText = "Return to Memories/Dreams"
+      buttonText = "Return to Memories"
     } else {
-      buttonText = "Create New Memory or Dream"
+      buttonText = "Create New Memory"
       currentlyVisible = <MemoryList  onMemorySelection={this.handleSelectMemory}  />
     }
     return(
       <React.Fragment>
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <button id="button-center" onClick={this.handleClick}>{buttonText}</button>
         {currentlyVisible}
       </React.Fragment>
     )
