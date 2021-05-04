@@ -13,7 +13,7 @@ function MemoryList(props){
   if (isLoaded(memories)){
     return (
       <>
-        <hr/>
+        {/* <hr/> */}
         {memories.map((memory)=>{
           return <Memory
           whenMemoryClicked = {props.onMemorySelection}
