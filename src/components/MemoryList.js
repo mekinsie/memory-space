@@ -13,6 +13,7 @@ function MemoryList(props){
   if (isLoaded(memories)){
     return (
       <>
+      <div class="memory-list">
       <div class="center">
         {memories.map((memory)=>{
           return <Memory
@@ -24,6 +25,7 @@ function MemoryList(props){
           id = {memory.id}
           key={memory.id} />
         })}
+      </div>
       </div>
       </>
     );

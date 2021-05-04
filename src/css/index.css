@@ -89,7 +89,11 @@ code {
   margin: 30px;
 }
 
-.form {
+.memory-list {
+  margin-bottom:30px;
+}
+
+#form {
   margin: auto;
   width: 50%;
   text-align: center;
@@ -101,4 +105,49 @@ p {
 
 h3{
   margin: 5px;
+}
+
+
+/* dfgjhdf */
+
+.moving_shape {
+  width: 100%;
+  height: 100%;
+  background: #FF0099;
+  background: linear-gradient(270deg,#845ec2,#d65db1,#ff6f91,#ff9671, #ffc75f, #f9f871);
+  background-color: rgba(0, 0, 0, 0);
+  background-repeat: repeat;
+  background-size: auto auto;
+  background-color: #ffd800;
+  background-size: 1000%;
+  background-repeat: repeat;
+  color: #fff;
+  animation: bg-move 30s linear infinite forwards, 
+  border-move 15s linear infinite forwards;
+}
+
+.container {
+z-index: -1;
+height: 200px;
+width: 200px;
+/* position:absolute; */
+left:50%;
+top: 50%;
+transform: translate(-50%,-50%);
+}
+
+@keyframes bg-move{0%{background-position:0 50%}50%{background-position:100% 50%}to{background-position:0 50%}}
+
+@keyframes border-move{
+0%{ border-radius:51% 49% 34% 66% / 39% 66% 34% 61%; }
+10%{ border-radius:39% 61% 38% 62% / 53% 54% 46% 47%; }
+20%{ border-radius:56% 44% 52% 48% / 57% 35% 65% 43%; }
+30%{ border-radius:41% 59% 45% 55% / 33% 56% 44% 67%; }
+40%{ border-radius:46% 54% 60% 40% / 55% 74% 26% 45%; }
+50%{ border-radius:44% 56% 22% 78% / 31% 74% 26% 69%; }
+60%{ border-radius:31% 69% 32% 68% / 31% 71% 29% 69%; }
+70%{ border-radius:44% 56% 60% 40% / 63% 36% 64% 37%; }
+80%{ border-radius:46% 54% 38% 62% / 44% 48% 52% 56%; }
+90%{ border-radius:66% 34% 57% 43% / 49% 51% 49% 51%; }
+100%{ border-radius:51% 49% 34% 66% / 39% 66% 34% 61%; }
 }

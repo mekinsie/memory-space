@@ -7,9 +7,9 @@ function MemoryDetail(props){
   return (
     <>
     <div class="center">
-      <h3>Memory Details</h3>
-      <h3>Name: {memory.name}</h3>
+      <h2>Memory Details:</h2>
       <h3>Date: {memory.date}</h3>
+      <h3>Name: {memory.name}</h3>
       <h3>Description: {memory.description}</h3>
       <button onClick={() => props.onClickingDelete(memory.id)}>Delete Memory</button>
       <button onClick={props.onClickingEdit}>Edit Memory</button>
