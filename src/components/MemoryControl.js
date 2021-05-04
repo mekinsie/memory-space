@@ -12,7 +12,7 @@ class MemoryControl extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      selectedMemory: null,
+      // selectedMemory: null,
       editing: false,
       formVisible: false
     }
@@ -25,18 +25,31 @@ class MemoryControl extends React.Component {
   }
 
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisible: !prevState.formVisible
-    }))
+    if (this.props.selectedMemory != null){
+      const {dispatch} = this.props;
+      const action = a.selectMemory(null)
+      dispatch(action)
+      this.setState({
+        editing: false
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisible: !prevState.formVisible
+      }));
+    }
   }
 
   render() {
     let currentlyVisible = null;
     let buttonText = null;
-    if (this.state.formVisible){
+    if (this.props.selectMemory != null){
+      currentlyVisible = <MemoryDetail memory = {this.props.selectedMemory} />
+      buttonText = "Return to Memories/Dreams"
+    }else if (this.state.formVisible){
       currentlyVisible = <NewMemoryForm /> // Need to update for the visibility function
       buttonText = "Return to Memories/Dreams"
     } else {
+      buttonText = "Create New Memory or Dream"
       currentlyVisible = <MemoryList  onMemorySelection={this.handleSelectMemory}  />
     }
     return(
