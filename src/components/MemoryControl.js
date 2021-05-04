@@ -1,10 +1,10 @@
 import React from 'react';
 import NewMemoryForm from './NewMemoryForm';
 import MemoryList from './MemoryList';
-// import MemoryDetail from './MemoryDetail';
+import MemoryDetail from './MemoryDetail';
 // import EditMemoryForm from './EditMemoryForm';
 import { connect } from 'react-redux';
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import * as a from './../actions';
 import { withFirestore } from 'react-redux-firebase'
 
@@ -19,9 +19,11 @@ class MemoryControl extends React.Component {
   }
 
   handleSelectMemory = (memory) => {
+    console.log(memory);
     const { dispatch } = this.props;
     const action = a.selectMemory(memory);
     dispatch(action);
+    console.log(this.props.selectedMemory)
   }
 
   handleClick = () => {
@@ -42,8 +44,9 @@ class MemoryControl extends React.Component {
   render() {
     let currentlyVisible = null;
     let buttonText = null;
-    if (this.props.selectMemory != null){
-      currentlyVisible = <MemoryDetail memory = {this.props.selectedMemory} />
+    if (this.props.selectedMemory != null){
+      // memory = {this.props.selectedMemory}
+      currentlyVisible = <MemoryDetail />
       buttonText = "Return to Memories/Dreams"
     }else if (this.state.formVisible){
       currentlyVisible = <NewMemoryForm /> // Need to update for the visibility function
@@ -67,6 +70,7 @@ class MemoryControl extends React.Component {
 
 const mapStateToProps = state => {
   return {
+    selectedMemory: state.selectedMemory
   }
 }
 
