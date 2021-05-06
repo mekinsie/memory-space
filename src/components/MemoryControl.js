@@ -95,7 +95,7 @@ class MemoryControl extends React.Component {
 }
 
 MemoryControl.propTypes = {
-  selectedMemory = PropTypes.object
+  selectedMemory: PropTypes.object
 }
 
 const mapStateToProps = state => {
