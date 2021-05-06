@@ -31,9 +31,10 @@ function NewMemoryForm(props){
     </>
   );
 }
-//NewMemoryForm.propTypes = {
-  //OnNewMemoryCreation: PropTypes.func
-// }
+
+NewMemoryForm.propTypes = {
+  OnNewMemoryCreation: PropTypes.func
+}
 
 
 export default NewMemoryForm;

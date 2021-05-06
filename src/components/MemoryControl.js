@@ -12,7 +12,6 @@ class MemoryControl extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      // selectedMemory: null,
       editing: false,
       formVisible: false,
       visible: true
@@ -93,11 +92,11 @@ class MemoryControl extends React.Component {
       </React.Fragment>
     )
   }
-
 }
 
-// MemoryControl.propTypes = {
-// }
+MemoryControl.propTypes = {
+  selectedMemory = PropTypes.object
+}
 
 const mapStateToProps = state => {
   return {

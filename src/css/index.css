@@ -8,7 +8,7 @@ html {
 
 body {
   margin: 0;
-  background: rgb(236, 229, 248);  
+  background: rgb(236, 229, 248);
   height: 100%;
   font-family: 'Crimson Text', serif;
   color: rgb(141, 129, 129);
@@ -60,7 +60,6 @@ button:hover {
   margin-bottom: 20px;
   margin-top: 30px;
 }
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -161,6 +160,7 @@ h1 {
   font-family: 'Crimson Text', serif;
   font-size: 40px;
 }
+
 .detailKey {
   font-weight: 100;
 }

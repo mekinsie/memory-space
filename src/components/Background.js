@@ -4,22 +4,18 @@ import "../css/background.css";
 export default function Background(){
   return(
     <>
-        <div class="area" >
-          <ul class="circles">
+        <div className="area" >
+          <ul className="circles">
             <li></li>
             <li></li>
             <li></li>
-            {/* <div class="purple"> */}
-              <li></li>
-              <li></li>
-              <li></li>
-            {/* </div> */}
-            {/* <div class="orange"> */}
               <li></li>
               <li></li>
               <li></li>
               <li></li>
-            {/* </div> */}
+              <li></li>
+              <li></li>
+              <li></li>
           </ul>
         </div >
     </>

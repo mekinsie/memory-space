@@ -23,6 +23,10 @@ function MemoryDetail(props){
   )
 }
 
+MemoryDetail.propTypes={
+  selectedMemory: PropTypes.object
+}
+
 const mapStateToProps = state =>{
   return {
     selectedMemory: state.selectedMemory

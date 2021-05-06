@@ -14,8 +14,8 @@ function MemoryList(props){
     return (
       <>
       <FadeIn transitionDuration="1000">
-        <div class="memory-list">
-          <div class="center">
+        <div className="memory-list">
+          <div className="center">
             {memories.map((memory)=>{
               return <Memory
               whenMemoryClicked = {props.onMemorySelection}
