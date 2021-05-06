@@ -22,14 +22,43 @@ function EditMemoryForm (props){
   }
 
   return (
-    <>
+    <React.Fragment>
       <FadeIn transitionDuration="1000">
-        <ReusableForm
-        formSubmissionHandler={handleEditMemorySubmit}
-        buttonText="Update Memory" />
+        <form id="form" onSubmit={handleEditMemorySubmit}>
+          <div>
+            <input
+              type='date'
+              name='date'
+              placeholder='Date'
+              defaultValue={memory.date}
+              required />
+          </div>
+          <div>
+            <input
+              type='text'
+              name='name'
+              placeholder='Memory Name'
+              defaultValue={memory.name}
+              required />
+            </div>
+          <div>
+            <textarea
+              rows="15"
+              cols="50"
+              name='description'
+              placeholder='Describe your memory or dream'
+              defaultValue={memory.description}
+              required />
+          </div>
+          <div>
+            <button type='submit'>Update Memory</button>
+          </div>
+        </form>
       </FadeIn>
-    </>
+    </React.Fragment>
   );
+
+
 }
 
 EditMemoryForm.propTypes ={
