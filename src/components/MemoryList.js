@@ -34,7 +34,7 @@ function MemoryList(props){
   } else {
     return (
       <>
-        <h3> Loading... </h3>
+        <span class="center"><h3> Loading... </h3></span>
       </>
     );
   }
