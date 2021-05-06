@@ -31,7 +31,7 @@
 
 ## _Description_ 📃
 
-This application is designed as a community memory space. This web application is connected and hosted through firebase. 
+This application is designed as a community memory space. Users can add their favorite or insightful memories to share with other users. This web application is connected and hosted through firebase.
 
 ---
 
