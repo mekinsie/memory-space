@@ -7,18 +7,18 @@ function MemoryDetail(props){
   const memory = props.selectedMemory;
   return (
     <>
-    <div class="moving_shape">
-      </div>
     <FadeIn transitionDuration="1000">
-      <div class="center">
-        <h2>Memory Details:</h2>
-        <h3>Date: {memory.date}</h3>
-        <h3>Name: {memory.name}</h3>
-        <h3>Description: {memory.description}</h3>
-        <button onClick={() => props.onClickingDelete(memory.id)}>Delete Memory</button>
-        <button onClick={props.onClickingEdit}>Edit Memory</button>
+      <div className="mem-detail">
+        <div className="center">
+          <h2 className="detailKey">Memory Details:</h2><br></br>
+          <h3>Date: <span className="detailKey">{memory.date}</span></h3>
+          <h3>Name: <span className="detailKey">{memory.name}</span></h3><br></br>
+          <h3><span className="detailKey"><em>{memory.description}</em></span></h3>
+          <button onClick={() => props.onClickingDelete(memory.id)}>Delete Memory</button>
+          <button onClick={props.onClickingEdit}>Edit Memory</button>
+        </div>
       </div>
-    </FadeIn>
+      </FadeIn>
     </>
   )
 }
