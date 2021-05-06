@@ -18,6 +18,11 @@ function MemoryDetail(props){
           <button onClick={props.onClickingEdit}>Edit Memory</button>
         </div>
       </div>
+      <div id="footer">
+        <br></br>
+        <br></br>
+        <br></br>
+      </div>
       </FadeIn>
     </>
   )

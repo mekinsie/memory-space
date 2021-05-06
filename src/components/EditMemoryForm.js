@@ -54,6 +54,8 @@ function EditMemoryForm (props){
             <button type='submit'>Update Memory</button>
           </div>
         </form>
+        <div id="footer">
+        </div>
       </FadeIn>
     </React.Fragment>
   );

@@ -163,3 +163,9 @@ h1 {
 .detailKey {
   font-weight: 100;
 }
+
+#footer {
+  padding-bottom: 13px;
+  text-align: center;
+  margin-top: 50px;
+}

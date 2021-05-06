@@ -31,6 +31,8 @@ function ReusableForm(props) {
           <button type='submit'>{props.buttonText}</button>
         </div>
       </form>
+      <div id="footer">
+      </div>
     </React.Fragment>
   );
 }
